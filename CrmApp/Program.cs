@@ -12,8 +12,6 @@ namespace CrmApp
             Ui ui = new Ui();
 
             Product apple = ui.CreateProduct();
-            apple.Print();
-
             Product orange = ui.CreateProduct();
             Product pear = ui.CreateProduct();
 

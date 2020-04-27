@@ -46,7 +46,7 @@ namespace CrmApp
             //   + " Quantity= " + Quantity
             //   + " TotalCost= " + TotalCost;
             // preferrable way using $
-            return $"Name= {Name} Price= {Price} Quantity= {Quantity} TotalCost= {TotalCost}";
+            return $"Name= {Name} Price= {Price} Quantity= {Quantity} TotalCost= {TotalCost} Code= {Code}";
 
         }
 
