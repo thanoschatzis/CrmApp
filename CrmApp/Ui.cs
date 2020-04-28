@@ -32,5 +32,29 @@ namespace CrmApp
             }
 
         }
+
+        public Customer CreateCustomer()
+        {
+            Customer customer = new Customer();
+            try
+            {
+                Console.WriteLine("Give the name ");
+                customer.Name = Console.ReadLine();
+                Console.WriteLine("Give the id ");
+                customer.Id = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("Give the available money ");
+                customer.Money = Decimal.Parse(Console.ReadLine());
+
+                return customer;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("You have not completed the questions properly." +
+                    " Please try again.");
+                return null;
+            }
+
+        }
+
     }
 }

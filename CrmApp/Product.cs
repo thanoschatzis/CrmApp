@@ -41,10 +41,6 @@ namespace CrmApp
         //method ToString inherented by the Object class
         public override string ToString()
         {
-            //return "Name= " + Name +"\n"
-            //   + " Price= "+Price
-            //   + " Quantity= " + Quantity
-            //   + " TotalCost= " + TotalCost;
             // preferrable way using $
             return $"Name= {Name} Price= {Price} Quantity= {Quantity} TotalCost= {TotalCost} Code= {Code}";
 
@@ -72,13 +68,16 @@ namespace CrmApp
 
         public string GetRange()
         {
-            if (Price < 1)
-                return "low";
-            else if (Price < 10)
-                return "medium";
-            else
-                return "hi";
+            string range;
 
+            if (Price < 1)
+                range = "low";
+            else if (Price < 10)
+                range = "medium";
+            else
+                range = "hi";
+
+            return range;
 
         }
 

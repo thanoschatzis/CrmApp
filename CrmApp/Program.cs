@@ -11,6 +11,9 @@ namespace CrmApp
 
             Ui ui = new Ui();
 
+            Customer Thanos = ui.CreateCustomer();
+            Thanos.Buy();
+
             Product apple = ui.CreateProduct();
             Product orange = ui.CreateProduct();
             Product pear = ui.CreateProduct();
@@ -26,33 +29,18 @@ namespace CrmApp
 
             int howManyLow = 0;
             int howManyMedium = 0;
-            int howManyHi = 0;
+            int howManyHigh = 0;
             foreach (Product p in products)
             {
                 Console.WriteLine(p.GetRange());
                 if (p.GetRange() == "low") howManyLow++;
                 if (p.GetRange() == "medium") howManyMedium++;
-                if (p.GetRange() == "hi") howManyHi++;
+                if (p.GetRange() == "high") howManyHigh++;
 
             }
             Console.WriteLine($"howManyLow= {howManyLow}");
             Console.WriteLine($"howManyMedium= {howManyMedium}");
-            Console.WriteLine($"howManyHi= {howManyHi}");
-
-            Console.WriteLine("----Not preferred approach------");
-
-            for (int i = 0; i < products.Count; i++)
-            {
-                Console.WriteLine(products[i]);
-            }
-
-            Console.WriteLine("-------Not preferred approach-------");
-            int index = 0;
-            while (index < products.Count)
-            {
-                Console.WriteLine(products[index]);
-                index++;
-            }
+            Console.WriteLine($"howManyHigh= {howManyHigh}");
 
         }
     }
