@@ -12,52 +12,63 @@ namespace CrmApp
     {
         static void Main()
         {
-            CustomerOption custOpt = new CustomerOption
+
+            ProductOption productOption = new ProductOption
             {
-                FirstName = "Maria",
-                LastName = "Pentagiotissa",
-                Address = "Athens",
-                Email = "maria@gmail.com",
+                Name = "iPhone",
+                Price = 500,
+                Quantity = 4
             };
 
             using CrmDbContext db = new CrmDbContext();
-            CustomerManagement custManager = new CustomerManagement(db);
+            ProductManagement productManager = new ProductManagement(db);
 
-            //testing the creation of a customer
-            Customer customer = custManager.CreateCustomer(custOpt);
-            Console.WriteLine($"Id= {customer.Id} Address= {customer.Address}");
+            Product product = productManager.CreateProduct(productOption);
+            Console.WriteLine($"Id= {product.Id} Price= {product.Price} Quantityy= {product.Quantity}");
 
-            //testing reading a customer
-            Customer cx = custManager.FindCustomerById(2);
-            Console.WriteLine($"Id= {cx.Id} Address= {cx.Address}");
+            //CustomerOption custOpt = new CustomerOption
+            //{
+            //    FirstName = "Maria",
+            //    LastName = "Pentagiotissa",
+            //    Address = "Athens",
+            //    Email = "maria@gmail.com",
+            //};
 
-            //testing updating
-            CustomerOption custChangeAdress = new CustomerOption
-            {
-                Address = "Lamia"
-            };
+            //using CrmDbContext db = new CrmDbContext();
+            //CustomerManagement custManager = new CustomerManagement(db);
 
-            Customer c2 = custManager.Update(custChangeAdress, 2);
-            Console.WriteLine($"Id= {cx.Id} Address= {cx.Address}");
+            ////testing the creation of a customer
+            //Customer customer = custManager.CreateCustomer(custOpt);
+            //Console.WriteLine($"Id= {customer.Id} Address= {customer.Address}");
 
-            //testing deletion
+            ////testing reading a customer
+            //Customer cx = custManager.FindCustomerById(2);
+            //Console.WriteLine($"Id= {cx.Id} Address= {cx.Address}");
 
-            bool result = custManager.DeleteCustomerById(2);
-            Console.WriteLine($"Result = {result}");
-            Customer cx2 = custManager.FindCustomerById(2);
-            if (cx2 != null)
-            {
-                Console.WriteLine(
-                $"Id= {cx2.Id} Name= {cx2.FirstName} Address= {cx2.Address}");
+            ////testing updating
+            //CustomerOption custChangeAdress = new CustomerOption
+            //{
+            //    Address = "Lamia"
+            //};
 
-            }
-            else
-            {
-                Console.WriteLine("not found");
-            }
+            //Customer c2 = custManager.Update(custChangeAdress, 2);
+            //Console.WriteLine($"Id= {cx.Id} Address= {cx.Address}");
 
+            ////testing deletion
 
+            //bool result = custManager.DeleteCustomerById(2);
+            //Console.WriteLine($"Result = {result}");
+            //Customer cx2 = custManager.FindCustomerById(2);
+            //if (cx2 != null)
+            //{
+            //    Console.WriteLine(
+            //    $"Id= {cx2.Id} Name= {cx2.FirstName} Address= {cx2.Address}");
 
+            //}
+            //else
+            //{
+            //    Console.WriteLine("not found");
+            //}
         }
     }
 }

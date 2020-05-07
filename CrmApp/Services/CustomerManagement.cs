@@ -42,10 +42,10 @@ namespace CrmApp.Services
             return customer;
         }
 
-        public Customer FindCustomerById(int id)
+        public Customer FindCustomerById(int customerId)
         {
             
-            Customer customer = db.Customers.Find(id);
+            Customer customer = db.Customers.Find(customerId);
             return customer;
         }
 
@@ -66,9 +66,10 @@ namespace CrmApp.Services
             return customer;
         }
 
-        public bool DeleteCustomerById(int id)
+        //Delete
+        public bool DeleteCustomerById(int customerId)
         {
-            Customer customer = db.Customers.Find(id);
+            Customer customer = db.Customers.Find(customerId);
             if (customer != null)
             {
                 db.Customers.Remove(customer);
